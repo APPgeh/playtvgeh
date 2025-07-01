@@ -9,7 +9,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PlayGeh</title>
 
-
+<div id="ad-container" style="width: 100%; max-width: 728px; margin: 0 auto;">
+<script type="text/javascript">
+	atOptions = {
+		'key' : '6717d78b5956505563b5fafaaff751fd',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//orientsweptautopsy.com/6717d78b5956505563b5fafaaff751fd/invoke.js"></script>
+</div>
+<style>
+  @media screen and (max-width: 768px) {
+    #ad-container {
+      max-width: 100%;
+    }
+    #ad-container iframe {
+      width: 100% !important;
+      height: 80px !important;
+    }
+  }
+</style>
 
 
 
@@ -590,105 +612,7 @@ body {
 
   
   
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background:;
-      width: 100%;
-      height: 100%;
-    }
-    #banner-container {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 90px;
-      background: #000;
-      text-align: center;
-      z-index: 1000;
-    }
-    #banner-container iframe {
-      width: 100%;
-      max-width: 728px;
-      height: 90px;
-      border: none;
-    }
-    #banner-close {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-      background: #000;
-      color: #fff;
-      border: none;
-      padding: 4px 8px;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 3px;
-      z-index: 1001;
-    }
-  </style>
-</head>
-<body>
-
-  <div id="banner-container">
-    <button id="banner-close">×</button>
-  </div>
-
-  <script>
-    const banner = document.getElementById('banner-container');
-    const closeBtn = document.getElementById('banner-close');
-
-    function injectAdScripts() {
-      Array.from(banner.querySelectorAll('iframe, script.ad-script')).forEach(el => el.remove());
-
-      const inline = document.createElement('script');
-      inline.className = 'ad-script';
-      inline.innerHTML = "atOptions = {\n"
-        + "  'key': '807a60b9f2e6d8bd9497a374c4e0130f',\n"
-        + "  'format': 'iframe',\n"
-        + "  'height': 90,\n"
-        + "  'width': 728,\n"
-        + "  'params': {}\n"
-        + "};";
-      banner.appendChild(inline);
-
-      const ext = document.createElement('script');
-      ext.className = 'ad-script';
-      ext.src = "//orientsweptautopsy.com/807a60b9f2e6d8bd9497a374c4e0130f/invoke.js";
-      banner.appendChild(ext);
-    }
-
-    function ajustaAlturaPlayer(_) {
-      // Não faz nada, só para manter compatibilidade com o código anterior
-    }
-
-    function openBanner() {
-      injectAdScripts();
-      banner.style.display = 'block';
-      ajustaAlturaPlayer(true);
-      setTimeout(closeBanner, 10000); // Fecha após 10 segundos
-    }
-
-    function closeBanner() {
-      banner.style.display = 'none';
-      ajustaAlturaPlayer(false);
-    }
-
-    closeBtn.addEventListener('click', closeBanner);
-
-    // Abre após 10s e reabre a cada 5min
-    setTimeout(openBanner, 10000);
-    setInterval(openBanner, 300000);
-
-    // Se redimensionar, mantém compatibilidade
-    window.addEventListener('resize', function () {
-      const aberto = banner.style.display === 'block';
-      ajustaAlturaPlayer(aberto);
-    });
-  </script>
-
+ 
 </body>
 </html>  
         
