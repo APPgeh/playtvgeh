@@ -1,17 +1,1 @@
-window.onload = function(){    
-    load();
-}
-
-
-function load(){
-    var menuBtn = document.getElementById("menu-btn");
-    var navLinks = document.getElementById("nav-links");
-
-
-    
-    menuBtn.addEventListener('click',()=>{
-        navLinks.classList.toggle('mobile-menu')
-    })
-
-
-}
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
