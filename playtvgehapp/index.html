@@ -10,16 +10,40 @@ var infolinks_wsid = 0;
 
 
 
-<script type="module" src="https://securepubads.shareus.io/scripts/tag/js/gpt.js" ></script>
+<!-- Script do Shareus -->
+<script type="module" src="https://securepubads.shareus.io/scripts/tag/js/gpt.js"></script>
 
-<div id="shareus-admanager-2497919055-q33xSEjOzt">
- <script>
-     window._shareustag = window._shareustag || {cmd:[]};
-    _shareustag.cmd.push(function() {
-      var slot1 = _shareustag.defineSlot('/shareus-admanager/2497919055/q33xSEjOzt/BannerGo', [[300,50]],'shareus-admanager-2497919055-q33xSEjOzt');
-    });
-  </script>
-</div>
+<!-- Container do Anúncio -->
+<div id="shareus-admanager-2497919055-q33xSEjOzt"></div>
+
+<script>
+  // Aguarda o carregamento do Shareus
+  window._shareustag = window._shareustag || { cmd: [] };
+
+  _shareustag.cmd.push(function () {
+    var slot1 = _shareustag.defineSlot(
+      '/shareus-admanager/2497919055/q33xSEjOzt/BannerGo',
+      [[300, 50]],
+      'shareus-admanager-2497919055-q33xSEjOzt'
+    );
+
+    // Após definir o slot, insere o segundo banner dentro da div
+    var container = document.getElementById('shareus-admanager-2497919055-q33xSEjOzt');
+
+    var atOptions = {
+      'key': '689f079cc0da2d92863c4bd14b20bb75',
+      'format': 'iframe',
+      'height': 50,
+      'width': 320,
+      'params': {}
+    };
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//orientsweptautopsy.com/689f079cc0da2d92863c4bd14b20bb75/invoke.js';
+    container.appendChild(script);
+  });
+</script>
 
 
 
