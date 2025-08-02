@@ -564,6 +564,582 @@ body {
 </script>
 
 
+<
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4cc9f0;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Smooch Sans', sans-serif;
+            font-weight: 500;
+        }
+
+        body {
+            background-color: #f5f7ff;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Botón flotante */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.5);
+        }
+
+        .floating-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Panel de descarga */
+        .download-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            width: calc(100% - 40px);
+            max-width: 500px;
+            overflow: hidden;
+            transition: var(--transition);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1001;
+        }
+
+        .download-container.active {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .download-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .download-header h2 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .download-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .download-content {
+            padding: 25px;
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .file-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .file-details h4 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+            font-size: 1.3rem;
+            letter-spacing: 0.3px;
+        }
+
+        .file-details p {
+            color: #6c757d;
+            font-size: 1rem;
+            letter-spacing: 0.2px;
+        }
+
+        .progress-container {
+            margin-bottom: 25px;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: var(--dark-color);
+            letter-spacing: 0.2px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), var(--success-color));
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .download-btn i {
+            margin-right: 8px;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+            display: none;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .signature {
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            margin-top: 15px;
+        }
+
+        .signature a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signature a:hover {
+            color: var(--primary-color);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón flotante -->
+    <button class="floating-btn" id="floatingBtn">↓</button>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Panel de descarga -->
+    <div class="download-container" id="downloadPanel">
+        <button class="close-btn" id="closeBtn">×</button>
+        <div class="download-header">
+            <h2>Baixar Aplicativo oficial</h2>
+            <p>Clique no botão abaixo</p>
+        </div>
+        
+        <div class="download-content">
+            <div class="file-info">
+                <div class="file-icon">
+                    <i id="fileIcon">📁</i>
+                </div>
+                <div class="file-details">
+                    <h4 id="fileName">Archivo.desconocido</h4>
+                    <p id="fileDetails">Obteniendo información del archivo...</p>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span class="progress-status">Esperando baixar...</span>
+                    <span class="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <button id="downloadBtn" class="download-btn">
+                <div class="spinner" id="spinner"></div>
+                <i>↓</i> Baixar arquivo
+            </button>
+<div class="signature">
+
+                <p><span id="signature-text"></span></p>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        // Elementos del DOM
+        const floatingBtn = document.getElementById('floatingBtn');
+        const overlay = document.getElementById('overlay');
+        const downloadPanel = document.getElementById('downloadPanel');
+        const closeBtn = document.getElementById('closeBtn');
+        
+        // Mostrar panel al hacer clic en el botón flotante
+        floatingBtn.addEventListener('click', () => {
+            downloadPanel.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Ocultar panel al hacer clic en el overlay o botón cerrar
+        function hidePanel() {
+            downloadPanel.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        overlay.addEventListener('click', hidePanel);
+        closeBtn.addEventListener('click', hidePanel);
+
+        // Verificación de firma
+        const signatureCheck = function() {
+            const signature = document.querySelector('.signature');
+            if (!signature || !signature.textContent.includes(String.fromCharCode(67,111,100,101,83,104,97,114,101))) {
+                document.body.innerHTML = '<div style="text-align:center;padding:50px;font-family:Arial,sans-serif;"><h1 style="color:#e63946;"></p></div>';
+                document.body.style.backgroundColor = '#f1faee';
+                throw new Error('Código modificado - Protección activada');
+            }
+        };
+
+        // Ejecutar verificación cada segundo
+        setInterval(signatureCheck, 1000);
+        
+        document.getElementById('signature-text').innerHTML = 
+            String.fromCharCode(67,114,101,97,100,111,32,99,111,110,32) + 
+            '&#' + 10084 + ';' + 
+            String.fromCharCode(32,112,111,114,32) + 
+            '<a href="#" target="_blank">' + 
+            String.fromCharCode(67,111,100,101,83,104,97,114,101) + 
+            '</a>';
+
+        const downloadBtn = document.getElementById('downloadBtn');
+        const spinner = document.getElementById('spinner');
+        const progressFill = document.querySelector('.progress-fill');
+        const progressPercent = document.querySelector('.progress-percent');
+        const progressStatus = document.querySelector('.progress-status');
+        const fileNameElement = document.getElementById('fileName');
+        const fileDetailsElement = document.getElementById('fileDetails');
+        const fileIconElement = document.getElementById('fileIcon');
+        
+        // URL definida internamente
+        const currentDownloadUrl = 'https://dl.dropbox.com/scl/fi/fkewft613ckpty16fsdxd/PlayOficial.apk?rlkey=uqgg3lsv6gxyap3xoeqakbzf3&st=v1707r9m&dl=0';
+        let isDownloading = false;
+        
+        // Tamaño del archivo
+        const fileSize = "29.12 MB";
+
+        // Convertir tamaño editable a bytes
+        function parseFileSize(sizeString) {
+            const units = {
+                'Bytes': 1,
+                'KB': 1024,
+                'MB': 1024 * 1024,
+                'GB': 1024 * 1024 * 1024,
+                'TB': 1024 * 1024 * 1024 * 1024
+            };
+            const match = sizeString.match(/^(\d*\.?\d+)\s*(Bytes|KB|MB|GB|TB)$/i);
+            if (!match) {
+                console.error("Formato de tamaño inválido. Usa '10 MB', '1 GB', etc.");
+                return 10485760; // 10 MB por defecto
+            }
+            const value = parseFloat(match[1]);
+            const unit = match[2].toUpperCase();
+            return value * units[unit];
+        }
+
+        let fileSizeBytes = parseFileSize(fileSize);
+
+        // Obtener información del archivo al cargar la página
+        window.addEventListener('DOMContentLoaded', () => {
+            getFileInfo(currentDownloadUrl);
+            signatureCheck(); // Verificación inicial
+        });
+        
+        downloadBtn.addEventListener('click', () => {
+            if (!isDownloading && currentDownloadUrl) {
+                startDownload();
+            }
+        });
+        
+        async function getFileInfo(url) {
+            try {
+                fileDetailsElement.textContent = "Obteniendo información del archivo...";
+                const fileInfo = analyzeFileInfo(url, fileSizeBytes);
+                updateFileInfo(fileInfo);
+            } catch (error) {
+                console.error("Error:", error);
+                const fileInfo = analyzeFileInfo(url, fileSizeBytes);
+                updateFileInfo(fileInfo);
+                fileDetailsElement.textContent = `${fileInfo.size} • ${fileInfo.type} (Tamaño definido)`;
+            }
+        }
+        
+        function analyzeFileInfo(url, sizeBytes) {
+            let fileName = 'Archivo_descargable';
+            let fileType = 'Arquivo';
+            let fileSize = formatFileSize(sizeBytes);
+            let icon = '📁';
+            
+            const fileNameMatch = url.match(/\/([^\/?]+)(?=\?|$)/);
+            if (fileNameMatch && fileNameMatch[1]) {
+                fileName = decodeURIComponent(fileNameMatch[1]);
+            }
+            
+            const extensionMatch = url.match(/\.([0-9a-z]+)(?:[\?#]|$)/i);
+            if (extensionMatch) {
+                const ext = extensionMatch[1].toLowerCase();
+                
+                switch(ext) {
+                    case 'apk':
+                        fileType = 'Aplicativo Android (APK)';
+                        icon = '📱';
+                        break;
+                    case 'pdf':
+                        fileType = 'Documento PDF';
+                        icon = '📄';
+                        break;
+                    case 'jpg': case 'jpeg': case 'png': case 'gif':
+                        fileType = `Imagen ${ext.toUpperCase()}`;
+                        icon = '🖼️';
+                        break;
+                    case 'mp4': case 'avi': case 'mov': case 'mkv':
+                        fileType = `Video ${ext.toUpperCase()}`;
+                        icon = '🎬';
+                        break;
+                    case 'mp3': case 'wav': case 'ogg':
+                        fileType = `Audio ${ext.toUpperCase()}`;
+                        icon = '🎵';
+                        break;
+                    case 'zip': case 'rar': case '7z':
+                        fileType = 'Archivo comprimido';
+                        icon = '🗜️';
+                        break;
+                    default:
+                        fileType = `Archivo ${ext.toUpperCase()}`;
+                }
+            }
+            
+            if (url.includes('mediafire.com')) {
+                fileType = `Mediafire (${fileType})`;
+            } else if (url.includes('drive.google.com')) {
+                fileType = `Google Drive (${fileType})`;
+            } else if (url.includes('mega.nz')) {
+                fileType = `MEGA (${fileType})`;
+            } else if (url.includes('dropbox.com')) {
+                fileType = `Dropbox (${fileType})`;
+            }
+            
+            return {
+                name: fileName,
+                type: fileType,
+                size: fileSize,
+                icon: icon
+            };
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return 'Tamaño desconocido';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        function updateFileInfo(fileInfo) {
+            fileNameElement.textContent = fileInfo.name;
+            fileDetailsElement.textContent = `${fileInfo.size} • ${fileInfo.type}`;
+            fileIconElement.textContent = fileInfo.icon;
+        }
+        
+        function startDownload() {
+            isDownloading = true;
+            spinner.style.display = 'block';
+            downloadBtn.disabled = true;
+            progressStatus.textContent = 'Procesando...';
+            
+            let progress = 0;
+            const totalDuration = 4500;
+            const startTime = Date.now();
+            
+            const interval = setInterval(() => {
+                const elapsed = Date.now() - startTime;
+                progress = Math.min((elapsed / totalDuration) * 100, 100);
+                
+                progressFill.style.width = `${progress}%`;
+                progressPercent.textContent = `${Math.floor(progress)}%`;
+                
+                if (progress > 10 && progress < 95) {
+                    const speed = (0.8 + Math.random() * 0.4).toFixed(1);
+                    progressStatus.textContent = `Processando... (${speed} MB/s)`;
+                }
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    progressFill.style.width = '100%';
+                    progressPercent.textContent = '100%';
+                    downloadComplete();
+                }
+            }, 50);
+        }
+        
+        function downloadComplete() {
+            spinner.style.display = 'none';
+            progressStatus.textContent = 'Baixando';
+            isDownloading = false;
+            
+            const link = document.createElement('a');
+            link.href = currentDownloadUrl;
+            link.download = fileNameElement.textContent;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            setTimeout(() => {
+                resetDownload();
+            }, 3000);
+        }
+        
+        function resetDownload() {
+            progressFill.style.width = '0%';
+            progressPercent.textContent = '0%';
+            progressStatus.textContent = 'Clique no botão para baixar';
+            downloadBtn.disabled = false;
+        }
+    </script>
+</body>
+</html>
+
+
 
 
 
