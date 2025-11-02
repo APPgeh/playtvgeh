@@ -2669,3 +2669,15 @@ zmaticoo.com, 113149, RESELLER
 zmaticoo.com, 5135004, RESELLER
 zmaticoo.com, 5135082, RESELLER
 zoklent.com, zok-1000, RESELLER
+adagio.io, 1522, RESELLER
+admatic.com.tr, mix-pub-692458276, RESELLER
+betweendigital.com, 47092, DIRECT
+conversantmedia.com, 100886, RESELLER, 03113cd04947736d
+cpmstar.com, 54453, RESELLER, 1b929e6459dfc260
+google.com, pub-3400636089340699, DIRECT, f08c47fec0942fa0
+monetixads.com, mix-pub-692458276, RESELLER
+netaddiction.it, 1092, RESELLER
+richaudience.com, 4AoWPWXbVu, RESELLER
+smartadserver.com, 5450, RESELLER, 060d053dcf45cbf3
+thebrave.io, 1234808, DIRECT, c25b2154543746ac
+video.unrulymedia.com, 146647607, RESELLER
