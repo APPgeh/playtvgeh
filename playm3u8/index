@@ -29,20 +29,20 @@
             <h1>🌐 Universal Proxy</h1>
             <p>Proxies everything - playlists, manifests, segments, any content type</p>
             <div class="hardcoded-note">
-                <strong>🔒 Hardcoded Referer:</strong> All requests automatically include <code>header_Referer=https://ppv.to/</code> in both initial and nested proxy calls.
+                <strong>🔒 Hardcoded Referer:</strong> All requests automatically include <code>header_Referer=https://streamrdc.xyz/</code> in both initial and nested proxy calls.
             </div>
         </div>
         <div class="section">
             <h2>📋 Usage</h2>
             <div class="example">
                 <h3>Basic Usage:</h3>
-                <p><span class="code">ppvto.php?url=YOUR_URL</span> <span class="info-badge">Auto Referer: https://ppv.to/</span></p>
+                <p><span class="code">ppvto.php?url=YOUR_URL</span> <span class="info-badge">Auto Referer: https://streamrdc.xyz/</span></p>
                 
                 <h3>With Custom Headers:</h3>
-                <p><span class="code">ppvto.php?url=YOUR_URL&header_User-Agent=custom-agent</span> <span class="info-badge">Auto Referer: https://ppv.to/</span></p>
+                <p><span class="code">ppvto.php?url=YOUR_URL&header_User-Agent=custom-agent</span> <span class="info-badge">Auto Referer: https://streamrdc.xyz/</span></p>
                 
                 <h3>For Key URLs (HLS encryption):</h3>
-                <p><span class="code">ppvto.php?ts=YOUR_KEY_URL</span> <span class="info-badge">Auto Referer: https://ppv.to/</span></p>
+                <p><span class="code">ppvto.php?ts=YOUR_KEY_URL</span> <span class="info-badge">Auto Referer: https://streamrdc.xyz/</span></p>
                 
                 <h3>Raw Text View:</h3>
                 <p><span class="code">ppvto.php?url=YOUR_URL&raw=1</span> <span class="info-badge">Auto Referer: https://ppv.to/</span></p>
@@ -51,12 +51,12 @@
         <div class="section">
             <h2>🧪 Test with Custom Headers</h2>
             <div class="hardcoded-note">
-                <strong>Note:</strong> Referer header is automatically included in ALL proxy URLs (including nested calls) as <code>header_Referer=https://ppv.to/</code>
+                <strong>Note:</strong> Referer header is automatically included in ALL proxy URLs (including nested calls) as <code>header_Referer=https://streamrdc.xyz/</code>
             </div>
             <form id="proxyForm" method="GET" action="" target="_blank">
                 <div class="form-group">
                     <label>URL:</label>
-                    <input type="url" name="url" id="testUrl" placeholder="https://gg.poocloud.in/wc_czechia/index.m3u8" required>
+                    <input type="url" name="url" id="testUrl" placeholder="https://sinal.cc/link/direto.m3u8?cc=y&categoria=live&folder=docs&canal=rdc-espn" required>
                 </div>
                 
                 <div class="form-group">
@@ -101,9 +101,9 @@
         <div class="section">
             <h2>📖 Quick Examples</h2>
             <div class="example">
-                <a href="?url=https://gg.poocloud.in/wc_czechia/index.m3u8&raw=1" target="_blank" class="btn">📄 Test Raw M3U8</a>
+                <a href="?url=https://sinal.cc/link/direto.m3u8?cc=y&categoria=live&folder=docs&canal=rdc-espn" target="_blank" class="btn">📄 Test Raw M3U8</a>
                 <br><br>
-                <a href="?url=https://gg.poocloud.in/wc_czechia/index.m3u8" target="_blank" class="btn">🎥 Test Stream</a>
+                <a href="?url=https://sinal.cc/link/direto.m3u8?cc=y&categoria=live&folder=docs&canal=rdc-espn" target="_blank" class="btn">🎥 Test Stream</a>
             </div>
         </div>
     </div>
