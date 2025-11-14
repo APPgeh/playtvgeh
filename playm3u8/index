@@ -39,7 +39,7 @@
                 <p><span class="code">ppvto.php?url=YOUR_URL</span> <span class="info-badge">Auto Referer: https://streamrdc.xyz/</span></p>
                 
                 <h3>With Custom Headers:</h3>
-                <p><span class="code">ppvto.php?url=YOUR_URL&header_User-Agent=custom-agent</span> <span class="info-badge">Auto Referer: https://streamrdc.xyz/</span></p>
+                <p><span class="code">?url=YOUR_URL&header_User-Agent=custom-agent</span> <span class="info-badge">Auto Referer: https://streamrdc.xyz/</span></p>
                 
                 <h3>For Key URLs (HLS encryption):</h3>
                 <p><span class="code">ppvto.php?ts=YOUR_KEY_URL</span> <span class="info-badge">Auto Referer: https://streamrdc.xyz/</span></p>
