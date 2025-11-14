@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Proxy</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; color: #333; }
+        .section { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        .btn { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn:hover { background: #218838; }
+        .header-row { display: flex; align-items: center; margin-bottom: 10px; }
+        .header-row input { flex: none; }
+        #generatedUrl { background: #f8f9fa; padding: 15px; border-radius: 4px; border: 1px solid #dee2e6; }
+        .example { background: #f8f9fa; padding: 15px; border-radius: 4px; margin: 10px 0; }
+        .code { font-family: monospace; background: #f1f1f1; padding: 2px 4px; border-radius: 3px; }
+        .info-badge { background: #17a2b8; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px; margin-left: 10px; }
+        .hardcoded-note { background: #d4edda; color: #155724; padding: 10px; border-radius: 4px; border: 1px solid #c3e6cb; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌐 Universal Proxy</h1>
+            <p>Proxies everything - playlists, manifests, segments, any content type</p>
+            <div class="hardcoded-note">
+                <strong>🔒 Hardcoded Referer:</strong> All requests automatically include <code>header_Referer=https://ppv.to/</code> in both initial and nested proxy calls.
+            </div>
+        </div>
+        <div class="section">
+            <h2>📋 Usage</h2>
+            <div class="example">
+                <h3>Basic Usage:</h3>
+                <p><span class="code">ppvto.php?url=YOUR_URL</span> <span class="info-badge">Auto Referer: https://ppv.to/</span></p>
+                
+                <h3>With Custom Headers:</h3>
+                <p><span class="code">ppvto.php?url=YOUR_URL&header_User-Agent=custom-agent</span> <span class="info-badge">Auto Referer: https://ppv.to/</span></p>
+                
+                <h3>For Key URLs (HLS encryption):</h3>
+                <p><span class="code">ppvto.php?ts=YOUR_KEY_URL</span> <span class="info-badge">Auto Referer: https://ppv.to/</span></p>
+                
+                <h3>Raw Text View:</h3>
+                <p><span class="code">ppvto.php?url=YOUR_URL&raw=1</span> <span class="info-badge">Auto Referer: https://ppv.to/</span></p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>🧪 Test with Custom Headers</h2>
+            <div class="hardcoded-note">
+                <strong>Note:</strong> Referer header is automatically included in ALL proxy URLs (including nested calls) as <code>header_Referer=https://ppv.to/</code>
+            </div>
+            <form id="proxyForm" method="GET" action="" target="_blank">
+                <div class="form-group">
+                    <label>URL:</label>
+                    <input type="url" name="url" id="testUrl" placeholder="https://gg.poocloud.in/wc_czechia/index.m3u8" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Custom Headers (Referer is automatically included in all URLs):</label>
+                    <div id="headersContainer">
+                        <div class="header-row" style="margin-bottom: 10px;">
+                            <input type="text" placeholder="Header Key (e.g., User-Agent)" style="width: 30%; margin-right: 10px;" class="header-key">
+                            <input type="text" placeholder="Header Value" style="width: 50%; margin-right: 10px;" class="header-value">
+                            <button type="button" onclick="removeHeader(this)" class="btn" style="background: #dc3545; padding: 5px 10px;">❌</button>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addHeader()" class="btn" style="background: #17a2b8; margin-top: 10px;">➕ Add Header</button>
+                </div>
+                
+                <div class="form-group">
+                    <label><input type="checkbox" name="raw" value="1"> View as raw text</label>
+                </div>
+                
+                <div class="form-group">
+                    <button type="button" onclick="generateProxyUrl()" class="btn" style="background: #6f42c1;">🔗 Generate Proxy URL</button>
+                    <button type="submit" class="btn">🎯 Test</button>
+                </div>
+                
+                <div id="generatedUrl" style="display: none; margin-top: 15px;">
+                    <label>Generated Proxy URL:</label>
+                    <textarea id="proxyUrlOutput" readonly style="height: 100px; font-family: monospace; font-size: 12px;"></textarea>
+                    <button type="button" onclick="copyToClipboard()" class="btn" style="background: #28a745; margin-top: 5px;">📋 Copy URL</button>
+                </div>
+            </form>
+        </div>
+        <div class="section">
+            <h2>🔐 Cookie Encoder</h2>
+            <form method="POST">
+                <div class="form-group">
+                    <label>Complex Cookie:</label>
+                    <textarea name="encode_text" rows="3" placeholder="night_mode=2; kdt=abc123"></textarea>
+                </div>
+                <button type="submit" name="encode" class="btn">🔒 Encode</button>
+            </form>
+            
+                    </div>
+        <div class="section">
+            <h2>📖 Quick Examples</h2>
+            <div class="example">
+                <a href="?url=https://gg.poocloud.in/wc_czechia/index.m3u8&raw=1" target="_blank" class="btn">📄 Test Raw M3U8</a>
+                <br><br>
+                <a href="?url=https://gg.poocloud.in/wc_czechia/index.m3u8" target="_blank" class="btn">🎥 Test Stream</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function addHeader() {
+            const container = document.getElementById('headersContainer');
+            const headerRow = document.createElement('div');
+            headerRow.className = 'header-row';
+            headerRow.style.marginBottom = '10px';
+            headerRow.innerHTML = `
+                <input type="text" placeholder="Header Key (e.g., User-Agent)" style="width: 30%; margin-right: 10px;" class="header-key">
+                <input type="text" placeholder="Header Value" style="width: 50%; margin-right: 10px;" class="header-value">
+                <button type="button" onclick="removeHeader(this)" class="btn" style="background: #dc3545; padding: 5px 10px;">❌</button>
+            `;
+            container.appendChild(headerRow);
+        }
+        function removeHeader(button) {
+            const container = document.getElementById('headersContainer');
+            // Don't remove if it's the last header row
+            if (container.children.length > 1) {
+                button.parentElement.remove();
+            } else {
+                // Clear the values if it's the last one
+                const row = button.parentElement;
+                row.querySelector('.header-key').value = '';
+                row.querySelector('.header-value').value = '';
+            }
+        }
+        function generateProxyUrl() {
+            const form = document.getElementById('proxyForm');
+            const url = document.getElementById('testUrl').value;
+            
+            if (!url) {
+                alert('Please enter a URL first');
+                return;
+            }
+            const baseUrl = window.location.protocol + '//' + window.location.host + '/' + 'ppvto.php';
+            let proxyUrl = baseUrl + '?url=' + encodeURIComponent(url);
+            // Add headers
+            const headerRows = document.querySelectorAll('.header-row');
+            const headers = [];
+            
+            headerRows.forEach(row => {
+                const key = row.querySelector('.header-key').value.trim();
+                const value = row.querySelector('.header-value').value.trim();
+                
+                if (key && value) {
+                    headers.push('header_' + encodeURIComponent(key) + '=' + encodeURIComponent(value));
+                }
+            });
+            if (headers.length > 0) {
+                proxyUrl += '&' + headers.join('&');
+            }
+            // Add raw parameter if checked
+            const rawCheckbox = form.querySelector('input[name="raw"]');
+            if (rawCheckbox && rawCheckbox.checked) {
+                proxyUrl += '&raw=1';
+            }
+            // Display the generated URL
+            document.getElementById('proxyUrlOutput').value = proxyUrl;
+            document.getElementById('generatedUrl').style.display = 'block';
+        }
+        function copyToClipboard() {
+            const output = document.getElementById('proxyUrlOutput');
+            output.select();
+            output.setSelectionRange(0, 99999); // For mobile devices
+            try {
+                document.execCommand('copy');
+                
+                // Change button text temporarily
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '✅ Copied!';
+                button.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '#28a745';
+                }, 2000);
+            } catch (err) {
+                alert('Failed to copy to clipboard. Please copy manually.');
+            }
+        }
+        // Update form submission to include dynamic headers
+        document.getElementById('proxyForm').addEventListener('submit', function(e) {
+            // Clear existing header inputs in the form
+            const existingHeaders = this.querySelectorAll('input[name^="header_"]');
+            existingHeaders.forEach(input => input.remove());
+            // Add dynamic headers to form
+            const headerRows = document.querySelectorAll('.header-row');
+            
+            headerRows.forEach(row => {
+                const key = row.querySelector('.header-key').value.trim();
+                const value = row.querySelector('.header-value').value.trim();
+                
+                if (key && value) {
+                    const hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'hidden';
+                    hiddenInput.name = 'header_' + key;
+                    hiddenInput.value = value;
+                    this.appendChild(hiddenInput);
+                }
+            });
+        });
+        // Initialize with a User-Agent header example
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstKeyInput = document.querySelector('.header-key');
+            const firstValueInput = document.querySelector('.header-value');
+            
+            if (firstKeyInput && firstValueInput) {
+                firstKeyInput.value = 'User-Agent';
+                firstValueInput.value = 'Mozilla/5.0 Custom Agent';
+            }
+        });
+    </script>
+</body>
+</html>
