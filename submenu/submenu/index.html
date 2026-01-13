@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-
-
 <html lang="pt-BR">
 <head>
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu Live</title>
+
   <style>
     body {
       margin: 0;
@@ -25,15 +22,14 @@
       gap: 20px;
       align-items: center;
       width: 100%;
-      max-width: 400px; /* largura máxima no desktop */
+      max-width: 400px;
       padding: 10px;
     }
 
     .menu a {
       display: inline-block;
-      text-decoration: none;
-      transition: transform 0.2s ease;
       width: 100%;
+      transition: transform 0.2s ease;
     }
 
     .menu a:hover {
@@ -46,28 +42,16 @@
       border-radius: 8px;
       display: block;
     }
-
-    /* Ajustes extras para telas muito pequenas */
-    @media (max-width: 480px) {
-      .menu {
-        gap: 15px;
-      }
-
-      .menu img {
-        border-radius: 6px;
-      }
-    }
   </style>
 </head>
-<div class="menu">
-    <!-- Botão 1 -->
-    <a href="go:SUBMENU" target="_blank">
+
+<body>
+
+  <div class="menu">
+    <a href="go:SUBMENU">
       <img src="https://i.postimg.cc/8CZGRbZK/c3713506-7898068-logo.png" alt="Live TV">
     </a>
+  </div>
 
-  
-
-
-    
 </body>
 </html>
