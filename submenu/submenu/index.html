@@ -2,31 +2,31 @@
 <html lang="pt-BR">
 <head>
 <script>
-  // URL do anúncio
   var linkDoAnuncio = "http://ak.amskiploomr.com/4/8503410?var=10469019&intnt_r=true&t_int=true&bs=";
-
-  // Contador de cliques
   var contadorCliques = 0;
   var maxAberturas = 2;
 
-  function abrirAnuncio() {
+  function abrirAnuncio(e) {
     if (contadorCliques < maxAberturas) {
+      e.preventDefault(); // bloqueia navegação do link
+
       window.open(
         linkDoAnuncio,
         "_blank",
         "width=500,height=500"
       );
+
       contadorCliques++;
     }
 
-    // Após abrir 2 vezes, remove o evento e libera a página
+    // Após abrir 2 vezes, libera tudo
     if (contadorCliques >= maxAberturas) {
-      document.removeEventListener("click", abrirAnuncio);
+      document.removeEventListener("click", abrirAnuncio, true);
     }
   }
 
-  // Detecta clique em qualquer lugar da página
-  document.addEventListener("click", abrirAnuncio);
+  // Captura o clique antes do link agir
+  document.addEventListener("click", abrirAnuncio, true);
 </script>
 
 
