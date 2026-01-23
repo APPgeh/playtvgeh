@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<script>
-  var linkDoAnuncio = "http://ak.amskiploomr.com/4/8503410?var=10469019&intnt_r=true&t_int=true&bs=";
-  var jaAbriu = false;
 
-  function abrirDoisPopups(e) {
-    if (!jaAbriu) {
-      e.preventDefault(); // bloqueia o clique (link/botão)
-
-      // Abre 2 popups no mesmo clique
-      window.open(linkDoAnuncio, "_blank", "width=500,height=500");
-      window.open(linkDoAnuncio, "_blank", "width=500,height=500");
-
-      jaAbriu = true;
-
-      // Libera a página após esse clique
-      document.removeEventListener("click", abrirDoisPopups, true);
-    }
-  }
-
-  // Captura clique em qualquer parte do site (inclusive links)
-  document.addEventListener("click", abrirDoisPopups, true);
-</script>
 
 
   <meta charset="UTF-8">
