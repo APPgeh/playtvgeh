@@ -164,7 +164,6 @@ adform.com, 3266, RESELLER
 adform.com, 3296, RESELLER, 9f5210a2f0999e32
 adform.com, 582, RESELLER, 9f5210a2f0999e32
 adform.com, 768, RESELLER
-adform.com, 768, RESELLER
 adform.com, 768, RESELLER, 9f5210a2f0999e32
 adform.com,2904,reseller,
 adform.com,2926,RESELLER,9f5210a2f0999e32
@@ -361,7 +360,6 @@ appnexus.com, 10490, RESELLER, f5ab79cb980f11d1
 appnexus.com, 10736, RESELLER
 appnexus.com, 11470, RESELLER
 appnexus.com, 11673, RESELLER, f5ab79cb980f11d1
-appnexus.com, 11673, RESELLER, f5ab79cb980f11d1
 appnexus.com, 11711, RESELLER, f5ab79cb980f11d1
 appnexus.com, 11786, RESELLER
 appnexus.com, 11786, RESELLER, f5ab79cb980f11d1
@@ -400,13 +398,11 @@ appnexus.com, 16912, RESELLER, f5ab79cb980f11d1
 appnexus.com, 1752, RESELLER, f5ab79cb980f11d1
 appnexus.com, 17553, RESELLER, f5ab79cb980f11d1
 appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
-appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
 appnexus.com, 2234, RESELLER
 appnexus.com, 2741, RESELLER, f5ab79cb980f11d1
 appnexus.com, 2758, RESELLER, f5ab79cb980f11d1
 appnexus.com, 2794, RESELLER, f5ab79cb980f11d1
 appnexus.com, 3135, RESELLER, f5ab79cb980f11d1
-appnexus.com, 3153, RESELLER, f5ab79cb980f11d1
 appnexus.com, 3153, RESELLER, f5ab79cb980f11d1
 appnexus.com, 3663, RESELLER, f5ab79cb980f11d1
 appnexus.com, 3703, RESELLER, f5ab79cb980f11d1
@@ -552,7 +548,6 @@ contextweb.com, 558511, RESELLER
 contextweb.com, 558511, RESELLER, 89ff185a4c4e857c
 contextweb.com, 558622, RESELLER, 89ff185a4c4e857c
 contextweb.com, 560288, RESELLER, 89ff185a4c4e857c
-contextweb.com, 560489, RESELLER, 89ff185a4c4e857c
 contextweb.com, 560489, RESELLER, 89ff185a4c4e857c
 contextweb.com, 561340, RESELLER, 89ff185a4c4e857c
 contextweb.com, 561516, RESELLER, 89ff185a4c4e857c
@@ -756,7 +751,6 @@ google.com, pub-2749054827332983, DIRECT, f08c47fec0942fa0
 google.com, pub-2749054827332983, RESELLER, f08c47fec0942fa0
 google.com, pub-2810494612743164, DIRECT, f08c47fec0942fa0
 google.com, pub-2930805104418204, RESELLER, f08c47fec0942fa0
-google.com, pub-2930805104418204, RESELLER, f08c47fec0942fa0
 google.com, pub-2936429649582761, DIRECT, f08c47fec0942fa0
 google.com, pub-2948748301051743, DIRECT, f08c47fec0942fa0
 google.com, pub-2953165119363303, RESELLER, f08c47fec0942fa0
@@ -814,7 +808,6 @@ google.com, pub-5533854580432370, RESELLER, f08c47fec0942fa0
 google.com, pub-5617098146054077, RESELLER, f08c47fec0942fa0
 google.com, pub-5646559979045035, DIRECT, f08c47fec0942fa0
 google.com, pub-5717092533913515, RESELLER, f08c47fec0942fa0
-google.com, pub-5717092533913515, RESELLER, f08c47fec0942fa0
 google.com, pub-5738383349802109, DIRECT, f08c47fec0942fa0
 google.com, pub-5761017298734489, RESELLER, f08c47fec0942fa0
 google.com, pub-5814161161676611, DIRECT, f08c47fec0942fa0
@@ -835,7 +828,6 @@ google.com, pub-6322541192886560, RESELLER, f08c47fec0942fa0
 google.com, pub-6346866704322274, RESELLER, f08c47fec0942fa0
 google.com, pub-6512936480753445, RESELLER, f08c47fec0942fa0
 google.com, pub-6631347089063164, DIRECT, f08c47fec0942fa0
-google.com, pub-6804276076764268, RESELLER, f08c47fec0942fa0
 google.com, pub-6804276076764268, RESELLER, f08c47fec0942fa0
 google.com, pub-6846559377126874, RESELLER, f08c47fec0942fa0
 google.com, pub-7002491002409919, DIRECT, f08c47fec0942fa0
@@ -900,7 +892,6 @@ google.com, pub-9378724246417115, RESELLER, f08c47fec0942fa0
 google.com, pub-9404419171574902, RESELLER, f08c47fec0942fa0
 google.com, pub-9418193717673860, DIRECT, f08c47fec0942fa0
 google.com, pub-9455272378627742, DIRECT, f08c47fec0942fa0
-google.com, pub-9467340974789471, RESELLER, f08c47fec0942fa0
 google.com, pub-9467340974789471, RESELLER, f08c47fec0942fa0
 google.com, pub-9557089510405422, RESELLER, f08c47fec0942fa0
 google.com, pub-9685734445476814, RESELLER, f08c47fec0942fa0
@@ -1077,7 +1068,6 @@ kueez.com, 2854d381166afa935bbf249821f0ce4c, direct
 kueez.com, 37593fdf8691b30f3d5f396800196fc7, RESELLER
 kueez.com, 4d2d14414cb66850e7b8fe2333036c66, RESELLER
 kueez.com, 4e6bcaa6797e0019a2362406888380d6, RESELLER
-kueez.com, 4f2805b3399db66bebab78814b83b2a2, RESELLER
 kueez.com, 4f2805b3399db66bebab78814b83b2a2, RESELLER
 kueez.com, 70e6362cca2ca92037fc0efea41e25a3, RESELLER
 kueez.com, 70e6362cca2ca92037fc0efea41e25a3,RESELLER
@@ -1441,7 +1431,6 @@ orangeclickmedia.com, ach5lxtq1pmgjoz4, RESELLER, cd730d2f56b472c4
 orangeclickmedia.com, hgu2t0onqs874x95, reseller
 outbrain.com, 002d7f7ba0bd74452f2b155d0dfb5cd6c8, RESELLER
 outbrain.com, 0052a42837b505f8ee68b4559b35c4d4d7, RESELLER
-outbrain.com, 0052a42837b505f8ee68b4559b35c4d4d7, RESELLER
 outbrain.com, 00595a29fe0f0efa37cd675959d6128c78, RESELLER
 outbrain.com, 0089b17935555149a32ed30dc72fc83f2d, RESELLER
 outbrain.com, 00f98002a95195662efb6f40c5311a76ff, RESELLER
@@ -1475,8 +1464,6 @@ pubmatic.com, 154037, RESELLER,
 pubmatic.com, 154037, RESELLER, 5d62403b186f2ace
 pubmatic.com, 155949, RESELLER, 5d62403b186f2ace
 pubmatic.com, 155968, RESELLER, 5d62403b186f2ace
-pubmatic.com, 156077, RESELLER, 5d62403b186f2ace
-pubmatic.com, 156077, RESELLER, 5d62403b186f2ace
 pubmatic.com, 156077, RESELLER, 5d62403b186f2ace
 pubmatic.com, 156136, RESELLER, 5d62403b186f2ace
 pubmatic.com, 156177, RESELLER
@@ -1564,7 +1551,6 @@ pubmatic.com, 161970, RESELLER, 5d62403b186f2ace
 pubmatic.com, 161997, RESELLER, 5d62403b186f2ace
 pubmatic.com, 162270, RESELLER, 5d62403b186f2ace
 pubmatic.com, 162319, DIRECT, 5d62403b186f2ace
-pubmatic.com, 162623, RESELLER, 5d62403b186f2ace
 pubmatic.com, 162623, RESELLER, 5d62403b186f2ace
 pubmatic.com, 162770, DIRECT, 5d62403b186f2ace
 pubmatic.com, 162770, RESELLER, 5d62403b186f2ace
@@ -1838,7 +1824,6 @@ rubiconproject.com, 26768, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 26800, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 26958, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 27026, RESELLER, 0bfd66d529a55807
-rubiconproject.com, 27026, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 27202, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 27316, DIRECT, 0bfd66d529a55807
 rubiconproject.com, 27316, RESELLER, 0bfd66d529a55807
@@ -1949,7 +1934,6 @@ smaato.com, 1100055901, RESELLER
 smaato.com, 1100055901, RESELLER, 07bcf65f187117b4
 smaato.com, 1100056344, RESELLER
 smaato.com, 1100056344, RESELLER, 07bcf65f187117b4
-smaato.com, 1100057444, RESELLER, 07bcf65f187117b4
 smaato.com, 1100057444, RESELLER, 07bcf65f187117b4
 smaato.com, 1100058165, DIRECT, 07bcf65f187117b4
 smaato.com, 1100058263, RESELLER, 07bcf65f187117b4
@@ -2385,7 +2369,6 @@ vidoomy.com, 2252369, RESELLER
 vidoomy.com, 2479436, DIRECT
 vidoomy.com, 4930225, RESELLER
 vidoomy.com, 7763608, RESELLER
-vidoomy.com, 9148331, RESELLER
 vidoomy.com, 9148331, RESELLER
 vidverto.com , vdvt-5345-p1, DIRECT
 vidverto.com, vdvt-5345, DIRECT
